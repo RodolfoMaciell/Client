@@ -1,5 +1,6 @@
 package com.mycompany.infoprojeto.InfoUso;
 
+import java.util.Arrays;
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
 import oshi.hardware.ComputerSystem;
@@ -15,6 +16,8 @@ import oshi.software.os.OperatingSystemVersion;
 
 public class Instancias {
 
+    // CRIANDO AS INTANCIA PARA MONTAR OS METÓDOS QUE SERAM OS GETS DAS INFORMAÇOES 
+    
     private SystemInfo si = new SystemInfo();
     private HardwareAbstractionLayer hal = si.getHardware();
     private CentralProcessor processador = hal.getProcessor();
@@ -24,15 +27,16 @@ public class Instancias {
     private OperatingSystem SO = si.getOperatingSystem();
     private PowerSource[] Energia = hal.getPowerSources();
     private Display[] Diplay = hal.getDisplays();
-    
-    
 
+    
+    // METODOS QUE ME DIPONIBILIZAO AS INFORMAÇOES DO OSHI
+    
     public OperatingSystemVersion VersaoDoSO() {
 
         return SO.getVersion();
-    } 
+    }
 
-    public String frabricante() {
+    public String fabricante() {
 
         return computerSystem.getManufacturer();
     }
@@ -56,16 +60,16 @@ public class Instancias {
 
         return memoria.getSwapUsed();
     }
-    
-    public double UsoProcessador(){
-    
+
+    public double UsoProcessador() {
+
         return processador.getSystemCpuLoadBetweenTicks();
-    
+
     }
-    
+
 }
 
-    /*
+/*
     public String NomeProcessador() {
         
         return processador.getIdentifier();
@@ -119,5 +123,4 @@ public class Instancias {
         return Diplay.clone(); 
     }
       
-     */
-
+ */
